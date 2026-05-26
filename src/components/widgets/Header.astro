@@ -132,6 +132,20 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             <Button {...btnProps} class="py-2.5 px-5.5 font-semibold shadow-none text-sm w-auto" />
           </li>
         )) : null}
+        {(showToggleTheme || showRssFeed) && (
+          <li class="min-[1205px]:hidden flex justify-end px-4 py-2 gap-1">
+            {showToggleTheme && <ToggleTheme iconClass="w-6 h-6" />}
+            {showRssFeed && (
+              <a
+                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                aria-label="RSS Feed"
+                href={getAsset('/rss.xml')}
+              >
+                <Icon name="tabler:rss" class="w-5 h-5" />
+              </a>
+            )}
+          </li>
+        )}
       </ul>
     </nav>
     <div
