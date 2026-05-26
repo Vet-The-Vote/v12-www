@@ -15,12 +15,16 @@ export const headerData = {
       href: getPermalink('/#vet-the-vote'),
     },
     {
-      text: 'Market Opportunity',
+      text: 'Opportunity',
       href: getPermalink('/#opportunity'),
     },
     {
       text: 'FAQ',
       href: getPermalink('/#faq'),
+    },
+    {
+      text: 'Blog',
+      href: getPermalink('/blog'),
     },
   ],
   actions: [{ text: 'Buy a Witness Node', href: 'https://square.link/u/oIQIRY3V?src=embed', variant: 'primary' }],
@@ -36,6 +40,7 @@ export const footerData = {
         { text: 'Vet The Vote', href: '/#vet-the-vote' },
         { text: 'Market Opportunity', href: '/#opportunity' },
         { text: 'Buy a Witness Node', href: '#buy-node' },
+        { text: 'Blog', href: getPermalink('/blog') },
       ],
     },
     {
@@ -63,6 +68,7 @@ export const footerData = {
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/ValhallaNow', target: '_blank' },
+    { ariaLabel: 'Truth Social', icon: 'brand-truthsocial', href: 'https://truthsocial.com/@ValhallaConstructs', target: '_blank' },
     { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@ValhallaConstruct', target: '_blank' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/profile.php?id=61577619407829', target: '_blank' },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/Vet-The-Vote/V12-Project', target: '_blank' },
