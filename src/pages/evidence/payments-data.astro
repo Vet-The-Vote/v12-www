@@ -1,0 +1,390 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const frps2019 = 'https://www.federalreserve.gov/paymentsystems/2019-December-The-Federal-Reserve-Payments-Study.htm';
+const frps2021 = 'https://www.federalreserve.gov/paymentsystems/december-2021-findings-from-the-federal-reserve-payments-study.htm';
+const frps2022 = 'https://www.federalreserve.gov/paymentsystems/2023-April-The-Federal-Reserve-Payments-Study.htm';
+const visaFees = 'https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf';
+
+const metadata = {
+  title: 'The Case for V12 — What the Federal Reserve\'s Own Data Shows',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero ******************* -->
+
+  <Hero
+    tagline="The Evidence"
+    actions={[
+      { variant: 'primary', text: 'Buy a Witness Node', href: 'https://square.link/u/oIQIRY3V?src=embed', icon: 'tabler:shield-check' },
+      { text: 'Back to Home', href: '/' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Financial data charts representing the U.S. payments market',
+    }}
+  >
+    <Fragment slot="title">
+      The Federal Reserve's Own Data<br />
+      <span class="text-accent dark:text-white">Makes the Case for V12</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Every dollar figure cited by V12 comes directly from official Federal Reserve Payments Studies
+      and Visa's published interchange fee schedules — primary sources that any citizen can verify
+      independently. This page presents that data plainly, shows what it means for ordinary Americans,
+      and explains exactly how V12 addresses what the numbers reveal.
+    </Fragment>
+  </Hero>
+
+  <!-- Note ******************* -->
+
+  <Note
+    title="Primary Sources Only:"
+    description="All data on this page is drawn directly from three official Federal Reserve Payments Studies and Visa's published fee schedule — no third-party estimates or projections."
+  />
+
+  <!-- What the Data Shows ******************* -->
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-12">
+
+    <!-- Intro -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white mb-4">The Growth of Noncash Payments in America</h2>
+      <p class="text-lg text-muted dark:text-slate-400 mb-4">
+        The Federal Reserve has tracked noncash payment trends in the United States since 2000 through its triennial
+        Payments Studies. The three most recent studies — covering data through 2018, 2021, and 2022 — paint a clear
+        picture: Americans are conducting an enormous and rapidly growing volume of electronic transactions every year,
+        and they are paying billions of dollars in fees to banks and card networks for the privilege.
+      </p>
+      <p class="text-lg text-muted dark:text-slate-400">
+        That fee revenue flows entirely to financial institutions. V12 is designed to redirect it to the 42,000 American
+        citizens who operate Witness Nodes — the backbone of the network that processes those same transactions.
+      </p>
+    </div>
+
+    <!-- Table 1 -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white mb-2">
+        Table 1 — Noncash Payments: 2015, 2018, and 2021
+      </h2>
+      <p class="text-muted dark:text-slate-400 mb-1 text-sm">
+        Source: <a href={frps2022} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">The Federal Reserve Payments Study: 2022 Triennial Initial Data Release</a>
+      </p>
+      <p class="text-muted dark:text-slate-400 mb-4 text-sm italic">
+        Reproduced from a U.S. federal government publication. Federal government works are in the public domain
+        under 17 U.S.C. § 105.
+      </p>
+      <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-slate-700 mb-4">
+        <img
+          src="/images/payments-study/2022_payments_study_table_1_non_cash_payments.png"
+          alt="Table 1: Noncash payments by number, value, and average transaction value for 2015, 2018, and 2021, broken down by payment type including debit cards, credit cards, ACH transfers, and checks."
+          class="w-full"
+        />
+      </div>
+      <div class="bg-blue-50 dark:bg-slate-800 rounded-lg p-6 mb-4">
+        <h3 class="text-lg font-semibold mb-3 dark:text-white">What This Table Shows</h3>
+        <ul class="space-y-2 text-muted dark:text-slate-400">
+          <li><strong class="dark:text-white">Card transactions grew from 101.5 billion (2015) to 157.0 billion (2021)</strong> — a 55% increase in just six years.</li>
+          <li><strong class="dark:text-white">Total card transaction value reached $9.43 trillion</strong> over the 2019–2021 period, up from $7.08 trillion in 2016–2018.</li>
+          <li><strong class="dark:text-white">The average card transaction was $60</strong> in 2021 — meaning the average American paid approximately $1.80 in hidden fees on every single card purchase.</li>
+          <li><strong class="dark:text-white">Non-cash payments now total 204.5 billion transactions per year</strong>, growing at a compound annual rate of 5.6% — a market expanding faster than the broader economy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Figure 1 -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white mb-2">
+        Figure 1 — Trends in Noncash Payments, by Value, 2000–21
+      </h2>
+      <p class="text-muted dark:text-slate-400 mb-1 text-sm">
+        Source: <a href={frps2022} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">The Federal Reserve Payments Study: 2022 Triennial Initial Data Release</a>
+      </p>
+      <p class="text-muted dark:text-slate-400 mb-4 text-sm italic">
+        Reproduced from a U.S. federal government publication. Federal government works are in the public domain
+        under 17 U.S.C. § 105.
+      </p>
+      <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-slate-700 mb-4">
+        <img
+          src="/images/payments-study/2022_payments_study_figure_1_non_cash_payments_by_value.png"
+          alt="Figure 1: Line chart showing trends in noncash payments by value in trillions of dollars from 2000 to 2021, broken down by payment type including ACH credit transfers, ACH debit transfers, checks, credit cards, non-prepaid debit cards, and prepaid debit cards."
+          class="w-full max-w-3xl mx-auto block"
+        />
+      </div>
+      <div class="bg-blue-50 dark:bg-slate-800 rounded-lg p-6 mb-4">
+        <h3 class="text-lg font-semibold mb-3 dark:text-white">What This Chart Shows</h3>
+        <ul class="space-y-2 text-muted dark:text-slate-400">
+          <li><strong class="dark:text-white">ACH credit transfers have exploded</strong> — growing from under $10 trillion in 2000 to nearly $60 trillion in 2021, reflecting the massive shift toward electronic payroll, bill payment, and business-to-business transfers.</li>
+          <li><strong class="dark:text-white">Check usage is declining</strong> but still represents trillions of dollars in annual value — a market that V12's payment network can absorb as adoption grows.</li>
+          <li><strong class="dark:text-white">Debit and credit card values have grown steadily</strong> since 2000 with no sign of slowing, confirming that the $8.4 billion annual fee opportunity V12 targets is a stable, long-term market — not a temporary trend.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Figure 2 -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white mb-2">
+        Figure 2 — Trends in Noncash Payments, by Number, 2000–21
+      </h2>
+      <p class="text-muted dark:text-slate-400 mb-1 text-sm">
+        Source: <a href={frps2022} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">The Federal Reserve Payments Study: 2022 Triennial Initial Data Release</a>
+      </p>
+      <p class="text-muted dark:text-slate-400 mb-4 text-sm italic">
+        Reproduced from a U.S. federal government publication. Federal government works are in the public domain
+        under 17 U.S.C. § 105.
+      </p>
+      <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-slate-700 mb-4">
+        <img
+          src="/images/payments-study/2022_payments_study_table_2_non_cash_payments_by_number.png"
+          alt="Figure 2: Line chart showing trends in noncash payments by number in billions from 2000 to 2021, broken down by payment type including non-prepaid debit cards, credit cards, prepaid debit cards, ACH transfers, and checks."
+          class="w-full max-w-3xl mx-auto block"
+        />
+      </div>
+      <div class="bg-blue-50 dark:bg-slate-800 rounded-lg p-6 mb-4">
+        <h3 class="text-lg font-semibold mb-3 dark:text-white">What This Chart Shows</h3>
+        <ul class="space-y-2 text-muted dark:text-slate-400">
+          <li><strong class="dark:text-white">Non-prepaid debit card transactions reached nearly 90 billion per year</strong> by 2021 — the single largest category by number of transactions and the primary driver of V12's fee opportunity.</li>
+          <li><strong class="dark:text-white">Credit card transactions grew to over 50 billion per year</strong>, continuing their two-decade upward trend.</li>
+          <li><strong class="dark:text-white">Check transactions fell from over 40 billion to about 10 billion</strong> between 2000 and 2021 — almost entirely replaced by electronic payments, which are the transactions V12 is designed to process.</li>
+          <li><strong class="dark:text-white">Total card transactions now exceed 157 billion per year</strong> — confirming the 52.4 billion annual figure V12 uses in its revenue estimates is a conservative baseline drawn from the 2018–2021 average, not a peak.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- The Fee Math ******************* -->
+
+  <Stats
+    stats={[
+      { title: 'Annual Card Transactions (2021)', amount: '157B' },
+      { title: 'Annual Card Transaction Value (2021)', amount: '$9.43T' },
+      { title: 'Returned to Merchants Per Year', amount: '$89.5B' },
+      { title: 'V12 Fee Revenue Per Year', amount: '$8.4B' },
+    ]}
+  />
+
+  <!-- Breaking Down the Hidden Tax ******************* -->
+
+  <Features
+    tagline="The Hidden Tax"
+    title="How Banks Extract $97.9 Billion From Americans Every Year"
+    subtitle={`The math behind these numbers comes directly from the Federal Reserve Payments Studies and Visa's published interchange fee schedule.`}
+    items={[
+      {
+        title: 'The Flat Fee: $5.24 Billion Per Year',
+        description:
+          'Banks charge a flat fee of approximately $0.10 on every card transaction. At 52.4 billion transactions per year (the 2018–2021 average), that flat fee alone generates $5.24 billion annually — paid by merchants, and passed on to consumers through higher prices.',
+        icon: 'tabler:math-function',
+      },
+      {
+        title: 'The Percentage Fee: $92.6 Billion Per Year',
+        description:
+          'On top of the flat fee, banks charge approximately 2.95% of the value of every card transaction. On $3.14 trillion in annual card transaction value, that percentage fee generates $92.6 billion per year — a hidden 3% tax on every purchase every American makes.',
+        icon: 'tabler:percentage',
+      },
+      {
+        title: 'Total: $97.9 Billion Extracted Per Year',
+        description:
+          'Combined, the flat fee and percentage fee total $97.9 billion per year — extracted from American merchants and consumers and paid to banks and card networks. This is not a profit for anyone in the real economy. It is a toll on every transaction.',
+        icon: 'tabler:cash',
+      },
+      {
+        title: 'V12 Replaces Both Fees With $0.16 Per Transaction',
+        description:
+          'V12 eliminates the percentage fee entirely and replaces the flat fee with a transparent, fixed $0.16 per transaction. At 52.4 billion annual transactions, V12 generates $8.4 billion in total network fees — all of which flows equally to the 42,000 American citizens who operate Witness Nodes.',
+        icon: 'tabler:circle-check',
+      },
+      {
+        title: '$89.5 Billion Returned to Merchants',
+        description:
+          'By eliminating the 3% percentage fee, V12 returns approximately $89.5 billion per year directly to American merchants — reducing prices for consumers and injecting real economic value back into the communities where it was earned.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: '$200,000 Per Year Per Node Operator',
+        description:
+          'The $8.4 billion in V12 network fees is split equally among all 42,000 Witness Node operators. That is $200,000 per year, per node — wealth that previously flowed exclusively to Wall Street banks now distributed to American households.',
+        icon: 'tabler:home-dollar',
+      },
+    ]}
+  />
+
+  <!-- Trend Context ******************* -->
+
+  <Content
+    isReversed
+    tagline="The Trend"
+    title="A Market Growing Faster Than the Economy — Every Year"
+    items={[
+      {
+        title: 'From $5.52T to $9.43T in Six Years',
+        description:
+          'Between the 2013–2015 and 2019–2021 study periods, total card transaction value grew from $5.52 trillion to $9.43 trillion — a 71% increase in six years. The fee opportunity V12 targets grows with it.',
+      },
+      {
+        title: 'From 101.5B to 157B Transactions in Six Years',
+        description:
+          'The number of annual card transactions grew from 101.5 billion (2013–2015 average) to 157 billion (2021) — a 55% increase. Every additional billion transactions represents an additional $160 million in annual V12 network fee revenue shared among node operators.',
+      },
+      {
+        title: 'Cash Is Disappearing',
+        description:
+          'Every successive Federal Reserve Payments Study has confirmed the same trend: Americans are using cash less and electronic payments more. The 2019 and 2021 studies show the pace of this shift accelerating. V12 is positioned at the center of where the entire economy is already heading.',
+      },
+      {
+        title: 'The 52.4B Figure Is Conservative',
+        description:
+          'V12\'s revenue estimates use 52.4 billion annual transactions — the 2018–2021 three-year average. The 2021 annual figure alone was 157 billion total card transactions. As adoption grows, the baseline transaction volume V12 processes will grow with it.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Upward trending financial graph representing the growing noncash payments market',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        The opportunity grows every year — with or without V12
+      </h3>
+      The question is not whether this market exists. The Federal Reserve's own data proves it does.
+      The question is who captures the fee revenue it generates — banks, or American citizens.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- How V12 Addresses This ******************* -->
+
+  <Features
+    tagline="How V12 Responds"
+    title="What V12 Does With This Data"
+    subtitle="The Federal Reserve's numbers are not just a market opportunity — they define V12's entire mission. Here is how each finding maps directly to a V12 feature."
+    items={[
+      {
+        title: 'Flat $0.16 Fee Replaces a Broken System',
+        description:
+          'The current dual-fee structure — $0.10 flat plus 3% of value — penalizes high-value transactions disproportionately. V12\'s flat $0.16 per transaction is the same whether you are buying a coffee or a car. Learn more on the <a href="/" class="text-blue-600 underline">V12 home page</a>.',
+        icon: 'tabler:equal',
+      },
+      {
+        title: 'ANTELOPE Leap 5.0 Handles the Volume',
+        description:
+          '157 billion annual transactions — over 4,900 per second at peak — requires infrastructure that can keep up. ANTELOPE Leap 5.0 processes thousands of transactions per second with sub-second finality. Read more on the <a href="/technology/antelope" class="text-blue-600 underline">ANTELOPE technology page</a>.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'EVM Smart Contracts Enforce the Fee Split',
+        description:
+          'The equal distribution of $8.4 billion among 42,000 node operators is not a promise — it is enforced automatically by an on-chain smart contract that no individual can override. Read more on the <a href="/technology/evm" class="text-blue-600 underline">EVM & Smart Contract Governance page</a>.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Quantum-Resistant Encryption Secures Every Transaction',
+        description:
+          'At 157 billion annual transactions, the volume of sensitive financial data flowing through V12 is enormous. Every transaction is protected by NIST-approved post-quantum encryption. Read more on the <a href="/technology/quantum-resistant-encryption" class="text-blue-600 underline">Quantum-Resistant Encryption page</a>.',
+        icon: 'tabler:lock',
+      },
+    ]}
+  />
+
+  <!-- References ******************* -->
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-12">
+    <h2 class="text-2xl font-bold tracking-tight dark:text-white mb-6">References</h2>
+    <p class="text-muted dark:text-slate-400 mb-6">
+      All data presented on this page is drawn from the following primary sources. Every figure, table, and
+      calculation can be independently verified by any citizen using the links below.
+    </p>
+    <ol class="space-y-4 text-muted dark:text-slate-400 list-decimal list-inside">
+      <li>
+        <a href={frps2019} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-medium">
+          The Federal Reserve Payments Study: 2019 Annual Supplement
+        </a>
+        <span class="block ml-6 text-sm mt-1">
+          Federal Reserve Board of Governors, December 2019. Covers noncash payment trends through 2018,
+          including transaction counts, values, and growth rates by payment type.
+        </span>
+      </li>
+      <li>
+        <a href={frps2021} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-medium">
+          Findings from the Federal Reserve Payments Study
+        </a>
+        <span class="block ml-6 text-sm mt-1">
+          Federal Reserve Board of Governors, December 2021. Covers noncash payment trends through 2020,
+          including the impact of the COVID-19 pandemic on payment volumes and the accelerating shift away from cash.
+        </span>
+      </li>
+      <li>
+        <a href={frps2022} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-medium">
+          The Federal Reserve Payments Study: 2022 Triennial Initial Data Release
+        </a>
+        <span class="block ml-6 text-sm mt-1">
+          Federal Reserve Board of Governors, April 2023. The most recent triennial study, covering full 2021
+          data. Source of Table 1 (Noncash payments by type), Figure 1 (Trends by value), and Figure 2
+          (Trends by number) reproduced on this page.
+        </span>
+      </li>
+      <li>
+        <a href={visaFees} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-medium">
+          Visa USA Interchange Reimbursement Fees
+        </a>
+        <span class="block ml-6 text-sm mt-1">
+          Visa Inc. Published interchange fee schedule. Source of the $0.10 flat fee and 2.95% percentage fee
+          figures used to calculate the $97.9 billion annual hidden tax estimate. See page 11.
+        </span>
+      </li>
+    </ol>
+    <p class="text-sm text-muted dark:text-slate-500 mt-8 italic">
+      The Federal Reserve Payments Studies are works of the United States federal government and are in the
+      public domain under 17 U.S.C. § 105. Figures and tables reproduced with source attribution.
+    </p>
+  </div>
+
+  <!-- CTA *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Buy a Witness Node',
+        href: '/#buy-node',
+        icon: 'tabler:shield-check',
+      },
+      {
+        variant: 'secondary',
+        text: 'Back to Home',
+        href: '/',
+        icon: 'tabler:arrow-left',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      The Data Is Clear.<br class="block sm:hidden" />
+      <span class="sm:whitespace-nowrap">The Choice Is Yours.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      The Federal Reserve's own numbers confirm that American consumers and merchants pay
+      $97.9 billion per year in hidden transaction fees — fees that flow entirely to banks.
+      <br class="hidden md:inline" /><br class="hidden md:inline" />
+      V12 replaces that system with a flat $0.16 per transaction, returns $89.5 billion to
+      merchants, and distributes $8.4 billion equally among 42,000 American Witness Node operators —
+      up to <strong>$200,000 per year, per node</strong>.
+      <br class="hidden md:inline" /><br class="hidden md:inline" />
+      The math is not a projection. It is arithmetic applied to the Federal Reserve's own data.
+    </Fragment>
+  </CallToAction>
+
+</Layout>

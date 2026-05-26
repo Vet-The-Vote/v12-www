@@ -1,0 +1,489 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Vet The Vote (V12) — Secure, Transparent, Citizen-Powered',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Buy a Witness Node',
+        href: 'https://square.link/u/oIQIRY3V?src=embed',
+        icon: 'tabler:shield-check',
+      },
+      { text: 'Learn How It Works', href: '#how-it-works' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'American flag and voting booth representing democratic integrity',
+    }}
+  >
+    <Fragment slot="title">
+      Restore Trust.<br />
+      <span class="text-accent dark:text-white">Vet The Vote.</span><br />
+      Reclaim Your Wealth.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="font-semibold">Vet The Vote (V12)</span> is a decentralized blockchain that empowers
+      every American to independently verify election results, eliminate hidden inflation taxes, and earn
+      their fair share of the $8.4 billion-per-year payment processing economy —
+      <span class="font-semibold">guaranteed by the laws of logic and mathematics.</span>
+    </Fragment>
+  </Hero>
+
+  <!-- Note ******************* -->
+
+  <Note
+    title="Powered by We The People:"
+    description="42,000 citizen-operated Witness Nodes, quantum-resistant encryption, and irrefutable mathematical proof."
+  />
+
+  <!-- Mission *************** -->
+
+  <Features
+    id="mission"
+    tagline="Our Mission"
+    title="What V12 Was Built to Accomplish"
+    subtitle="Four core pillars — each backed by decentralized technology that no politician, corporation, or foreign adversary can shut down."
+    items={[
+      {
+        title: 'Restore Trust in Our Elections',
+        description:
+          'V12 lets We The People independently count every vote using a transparent, mathematically provable process — giving every American the power to verify results, not just accept them.',
+        icon: 'tabler:checkbox',
+      },
+      {
+        title: 'Stabilize the Value of Our Currency',
+        description:
+          'V12 mints new tokens only when valuable work is performed — vetting votes, running a node, participating in the economy. No inflation without productivity. Full stop.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Safeguard the Right to Free Trade',
+        description:
+          'Private, peer-to-peer transactions on V12 replace the 3% hidden tax that banks and card processors extract from every purchase. Your money, your trade, your privacy.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Distribute Wealth Equitably Among Citizens',
+        description:
+          'Every dollar in transaction fees is split equally among 42,000 citizen node operators. The opportunity for each node operator is up to $200,000 per year — money that previously flowed only to Wall Street banks.',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <!-- How V12 Works *************** -->
+
+  <Features2
+    id="how-it-works"
+    tagline="How It Works"
+    title="Five Processes That Power V12"
+    subtitle="V12 is an advanced, decentralized computer network powered by citizen-operated nodes that link voting, work, and economic stability."
+    items={[
+      {
+        title: 'Vetting the Vote',
+        description:
+          'Citizens act as Poll Watchers, validating voter citizenship, district, and ballot accuracy. V12 randomly assigns verification tasks and rewards participants with V12 tokens.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Minting New Currency',
+        description:
+          'V12 creates and distributes tokens only when valuable work is done — voting verification, managing a compute node, or participating in commerce. This controls inflation and supports economic stability.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Secure, Private Transactions',
+        description:
+          'Transactions can be public (visible to all) or private (viewable only by sender and receiver), safeguarding user privacy and enabling unrestricted free trade.',
+        icon: 'flat-color-icons:lock',
+      },
+      {
+        title: 'Funding Citizen-Approved Projects',
+        description:
+          'A portion of transaction fees funds public projects that citizens vote to approve — ensuring transparency and local accountability without government gatekeepers.',
+        icon: 'flat-color-icons:conference-call',
+      },
+      {
+        title: 'Free Trade, Anywhere',
+        description:
+          'V12 enables free trade between users in any location, across any format — digital, in-person, or paper — allowing seamless domestic and global transactions.',
+        icon: 'flat-color-icons:globe',
+      },
+      {
+        title: 'Quantum-Resistant Security',
+        description:
+          'Every part of V12 is protected by post-quantum encryption approved by NIST, ensuring robust security not just for today, but for the quantum computing era ahead.',
+        icon: 'flat-color-icons:key',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Vet The Vote — Step-by-Step ****************** -->
+
+  <Steps
+    id="vet-the-vote"
+    title="How We The People Independently Verify Every Vote"
+    subtitle="The same logic your Junior High math teacher taught you — solve a problem two different ways and compare answers. If they match, the answer is correct. If they don't, one MUST be wrong."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Verify Identity</span>',
+        description:
+          'Citizens upload identity documents through the V12 app. Twenty citizens are randomly selected — like a jury — and at least 12 must agree the documents are valid. Documents are encrypted on the applicant\'s device; only those 20 verifiers hold the decryption keys. Upon approval, a permanent Citizenship Token is minted and sent to the applicant.',
+        icon: 'tabler:id-badge',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Verify Voting District</span>',
+        description:
+          'Before each election, citizens register their address. Twenty randomly selected verifiers review address records. Once 12 of 20 agree, a single-use Voter Token is issued — valid only within the citizen\'s registered district. This prevents double-voting by design.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Cast Your Digital Ballot on Voting Day</span>',
+        description:
+          'On voting day, after completing their official paper ballot, each citizen optionally uses the V12 app to: (1) cast a matching digital ballot and (2) photograph both sides of their completed paper ballot. All results are tallied in real time — no waiting for officials to announce a winner.',
+        icon: 'tabler:checkbox',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Certify Each Ballot</span>',
+        description:
+          'Twenty randomly selected citizens compare each voter\'s digital ballot against their photographed paper ballot. At least 12 must agree they match. Discrepancies are immediately flagged. The voter is anonymously notified and can report suspected fraud directly through the app, triggering a legal process backed by real court case numbers.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Step 5: <span class="font-medium">Compare the Count</span>',
+        description:
+          'Simply compare V12\'s final vote count against the official Electoral College results. If our mathematically proven count differs from the official tally, one MUST be wrong. If V12\'s count is correct — and it can be proven using irrefutable logic — then the official results are wrong. That is not evidence. That is PROOF.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: "America 2.0 — Corruption-Free",
+        icon: 'tabler:flag',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1569163139599-0f4517e36f51?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'Citizens collaborating on a digital voting verification process',
+    }}
+  />
+
+  <!-- Market Opportunity **************** -->
+
+  <Content
+    id="opportunity"
+    isReversed
+    tagline="The Financial Opportunity"
+    title="$200,000 Per Year — For Every Witness Node Operator"
+    items={[
+      {
+        title: '$97.9 Billion in Hidden Annual Taxes — Eliminated',
+        description:
+          'U.S. banks and card processors charged $97.9 billion in fees in 2021 alone — a hidden 3% tax on every American purchase. V12 replaces all of that with a flat ~$0.16 per transaction.',
+      },
+      {
+        title: '$8.4 Billion in Annual Fee Revenue — Shared Equally',
+        description:
+          'Based on 52.4 billion annual card transactions, V12 generates approximately $8.4 billion per year in processing fees. Every dollar is split equally among all 42,000 node operators.',
+      },
+      {
+        title: 'Up to $200,000 Per Node Operator, Per Year',
+        description:
+          'That\'s $8.4B ÷ 42,000 nodes = $200,000 per year, per node. Revenue previously captured by Wall Street banks now flows directly to citizen households across America.',
+      },
+      {
+        title: 'Plus: Voting System Contract Revenue',
+        description:
+          'U.S. states currently pay $75 million per year to companies like Dominion Voting for election services. V12 competes for that market too. At full adoption, that\'s an additional $1,785 per node per year — enough to recover your node purchase cost in year one.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Financial charts representing the payment processing market opportunity',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        The wealth that banks extract from you every day belongs to you
+      </h3>
+      Based on the <a href="https://www.federalreserve.gov/paymentsystems/2023-April-The-Federal-Reserve-Payments-Study.htm" target="_blank" class="text-blue-600 underline">The Federal Reserve Payments Study: 2022 Triennial Initial Data Release</a>, <a href="https://www.federalreserve.gov/paymentsystems/december-2021-findings-from-the-federal-reserve-payments-study.htm" target="_blank" class="text-blue-600 underline">Findings from the Federal Reserve Payments Study</a>, and <a href="https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf" target="_blank" class="text-blue-600 underline">Visa's published interchange fees</a>.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Legal Protection **************** -->
+
+  <Content
+    isAfterContent
+    tagline="Legal Protection"
+    title="V12 Tokens: Legally Protected Like Bitcoin"
+    items={[
+      {
+        title: 'Not a Security — Confirmed by SEC Precedent',
+        description:
+          'V12 tokens operate like Bitcoin — earned only by performing valuable work, not purchased as investments. The SEC has not classified Bitcoin as a security, and the same legal reasoning applies to V12 tokens.',
+      },
+      {
+        title: 'Not a Money Transmitter Service',
+        description:
+          'Under U.S. Legal Code Title 31, Section 5330, a "Money Transmitter" must first accept and then transmit funds. V12 node operators never hold funds — they simply witness and verify private peer-to-peer transactions. This is the same legal distinction that protects Bitcoin miners.',
+      },
+      {
+        title: 'No $50 Million Licensing Barrier',
+        description:
+          'Money Transmitter Licenses cost over $1 million per state, totaling $50M+ for all 50 states — a barrier that locks out ordinary citizens. V12 is architected from the ground up to bypass this barrier legally.',
+      },
+      {
+        title: 'Honoring All U.S. Laws',
+        description:
+          'V12 is designed to operate within existing U.S. law, including limited power of attorney for citizen verifiers, full compliance with identity and address verification statutes, and transparent on-chain audit trails for any court proceeding.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'United States Constitution and legal framework',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Built to honor every American's rights
+      </h3>
+      V12 protects your privacy, your vote, and your financial freedom — all within the bounds of the U.S. Constitution and existing law.
+    </Fragment>
+  </Content>
+
+  <!-- Roles & Tokens **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    tagline="Roles, Tasks & Tokens"
+    title="How Citizens Earn and Participate"
+    items={[
+      {
+        title: 'Users — Free Accounts for All',
+        description:
+          'Anyone can create a free V12 account and participate in the marketplace, send private transactions, and access the V12 network.',
+      },
+      {
+        title: 'Citizens — Verified Participants',
+        description:
+          'Verified users who have completed identity verification. Citizens receive a permanent Citizenship Token and can participate in all V12 activities including voting and earning rewards.',
+      },
+      {
+        title: 'Poll Watchers — Randomly Selected Verifiers',
+        description:
+          'Citizens randomly selected to validate voter identities, addresses, and ballots. They earn V12 tokens and permanent Honor Tokens for their service to the nation.',
+      },
+      {
+        title: 'Witness Node Operators — The Backbone of V12',
+        description:
+          'Citizens who purchase and operate a V12 Witness Node, providing the compute resources that power the network. They share equally in all network transaction fees — up to $200,000 per year.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80',
+      alt: 'Diverse group of American citizens collaborating',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Every American has a role to play
+      </h3>
+      V12 distributes both the work and the rewards of securing our nation's democracy and economy among ordinary citizens — not corporations.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Key Stats ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Witness Nodes Needed', amount: '42,000' },
+      { title: 'Annual Revenue Per Node', amount: '$200K' },
+      { title: 'Hidden Bank Tax Eliminated', amount: '$97.9B' },
+      { title: 'Annual Network Fee Revenue', amount: '$8.4B' },
+    ]}
+  />
+
+  <!-- Technical Foundation **************** -->
+
+  <Features
+    tagline="Technical Foundation"
+    title="Built on Proven, Battle-Tested Blockchain Technology"
+    subtitle="V12 is an EOS-derived blockchain with EVM compatibility — combining the speed of ANTELOPE with the developer ecosystem of Ethereum."
+    items={[
+      {
+        title: 'ANTELOPE Leap 5.0',
+        description:
+          'Built on ANTELOPE_LEAP_VERSION 5.0, one of the most performant and battle-tested blockchain runtimes in the world — capable of processing thousands of transactions per second.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'EVM Compatible',
+        description:
+          'V12 runs an EVM-compatible virtual machine (EOS EVM 0.6.0), meaning it supports the entire Ethereum developer toolchain — Solidity, MetaMask, Hardhat, and more.',
+        icon: 'tabler:currency-ethereum',
+      },
+      {
+        title: 'ANTELOPE CDT 4.0.1',
+        description:
+          'Smart contracts are developed using ANTELOPE CDT 4.0.1, with EOS System Contracts 3.2.0 providing the foundational on-chain governance layer.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Post-Quantum Encryption',
+        description:
+          'Every transaction, identity document, and communication on V12 is protected by NIST-approved post-quantum cryptographic algorithms — secure against both classical and quantum computers.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Decentralized & Censorship-Resistant',
+        description:
+          'With 42,000 nodes distributed across American households, there is no single server to raid, no single domain to block, and no single point of failure. V12 cannot be shut down.',
+        icon: 'tabler:network',
+      },
+      {
+        title: 'Transparent & Auditable',
+        description:
+          'All votes, all token transactions, and all source code are publicly auditable on-chain. Any U.S. court can verify V12\'s results. There are no black boxes.',
+        icon: 'tabler:eye',
+      },
+    ]}
+  />
+
+  <!-- FAQs ******************* -->
+
+  <FAQs
+    id="faq"
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about V12, how it works, and how to get involved."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Is V12 legal?',
+        description:
+          'Yes. V12 is architected from the ground up to comply with all U.S. laws. V12 tokens are earned through work — not sold as investments — placing them in the same legal category as Bitcoin, which the SEC has not classified as a security. Node operators are not "money transmitters" under U.S. Code Title 31, Section 5330, for the same reason Bitcoin miners are not. All voter verification processes honor existing U.S. identity and address verification statutes.',
+      },
+      {
+        title: 'How is V12 different from other blockchains?',
+        description:
+          'Most blockchains are focused purely on finance. V12 uniquely links voting integrity, currency stability, and payment processing into a single citizen-powered network. It is purpose-built for the United States, designed to operate within U.S. law, and engineered specifically to solve the double-vote and double-spend problems simultaneously.',
+      },
+      {
+        title: 'How does V12 protect my privacy as a voter?',
+        description:
+          'Your identity documents are encrypted on your own device before being uploaded. Only the 20 randomly selected verifiers receive decryption keys, and a digital fingerprint is applied so any unauthorized distribution of your documents can be traced. Your vote is cast anonymously and is untraceable. Even the V12 system itself cannot link your identity to your ballot.',
+      },
+      {
+        title: 'What does a Witness Node operator actually do?',
+        description:
+          'A Witness Node is a computer that processes and records transactions on the V12 network. As a node operator, you run the software on hardware in your home or business, keep it connected to the internet, and in return receive an equal share of all network transaction fees. No technical expertise is required — V12 provides a plug-and-play setup.',
+      },
+      {
+        title: 'What if V12\'s vote count differs from the official results?',
+        description:
+          'If V12\'s mathematically proven count differs from the official Electoral College results, one of them MUST be wrong. If it can be proven — using irrefutable laws of logic and mathematics — that V12\'s count is correct, then the official results are wrong. This constitutes proof (not merely evidence) of either a certification error or election fraud, which can be presented in a U.S. Court of Law.',
+      },
+      {
+        title: 'What conditions must be met to certify an election using V12?',
+        description:
+          'More than 50% of voters registered in a U.S. Presidential Election must also: (1) register a V12 account, (2) verify their identity and address using V12, and (3) cast their digital ballot on voting day using V12. If these three conditions are met, the results are mathematically certifiable and legally admissible as proof in any U.S. court.',
+      },
+    ]}
+  />
+
+  <!-- Buy a Node *********** -->
+
+  <section id="buy-node" class="relative not-prose scroll-mt-[72px]">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent pointer-events-none" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-white">
+          Secure America's Future.<br class="hidden sm:block" />
+          Secure Your Family's Future.
+        </h2>
+        <p class="text-xl text-muted dark:text-slate-400">
+          42,000 citizen-operated Witness Nodes are needed to power the V12 network nationwide.
+          Each node represents up to <strong>$200,000 per year</strong> in shared transaction fee revenue —
+          money that currently flows exclusively to the world's largest banks.
+          <br class="hidden md:inline" /><br class="hidden md:inline" />
+          No taxation without representation. Free and fair elections. Home of the brave, land of the free — once again.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+
+        <!-- V12 Miner -->
+        <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden shadow-lg w-full max-w-sm flex flex-col">
+          <img
+            src="/images/products/v12_node/v12-node-front.jpeg"
+            alt="V12 Miner Witness Node"
+            class="w-full h-56 object-cover"
+          />
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold dark:text-white mb-1">V12 Miner</h3>
+            <p class="text-3xl font-bold text-primary mb-3">$999.00</p>
+            <p class="text-muted dark:text-slate-400 text-sm flex-1 mb-6">
+              A citizen-operated Witness Node that connects you to a nationwide network of 42,000 everyday citizens,
+              ensuring no single authority can tamper with election results.
+            </p>
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://square.link/u/oIQIRY3V?src=embed"
+              class="block text-center font-semibold text-white bg-primary hover:bg-secondary rounded-lg py-3 px-6 transition duration-200"
+            >
+              Buy Now
+            </a>
+          </div>
+        </div>
+
+        <!-- More products coming soon -->
+        <div class="bg-white dark:bg-slate-800 border border-dashed border-gray-300 dark:border-slate-600 rounded-xl w-full max-w-sm flex flex-col items-center justify-center p-10 text-center min-h-[420px]">
+          <div class="text-5xl mb-4">🔜</div>
+          <h3 class="text-xl font-bold dark:text-white mb-2">More Nodes Coming Soon</h3>
+          <p class="text-muted dark:text-slate-400 text-sm">
+            V12 Nodes are issued as 9 numbered series — Jonin, Chunin, and Genin — each bearing
+            a unique rank insignia that permanently honors your place among the founding supporters
+            of the V12 blockchain. The earlier you join, the higher the rank. All 42,000 nodes
+            are limited edition; once a series sells out, it is gone forever.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>

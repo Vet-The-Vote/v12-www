@@ -1,0 +1,361 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const nistUrl = 'https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/selected-algorithms';
+
+const metadata = {
+  title: 'Quantum-Resistant Encryption — How V12 Protects Your Vote and Identity',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero ******************* -->
+
+  <Hero
+    tagline="Technology"
+    actions={[
+      { variant: 'primary', text: 'Buy a Witness Node', href: 'https://square.link/u/oIQIRY3V?src=embed', icon: 'tabler:shield-check' },
+      { text: 'Back to Home', href: '/' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Abstract representation of cryptographic security protecting data',
+    }}
+  >
+    <Fragment slot="title">
+      Your Vote and Identity Are Protected by<br />
+      <span class="text-accent dark:text-white">Quantum-Resistant Encryption</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Every piece of sensitive data on V12 — your identity documents, your ballot, your private
+      transactions — is protected by encryption algorithms that the National Institute of Standards
+      and Technology (NIST) has selected specifically to withstand attacks from quantum computers.
+      This is the strongest publicly available encryption in existence, and it is built into every
+      layer of V12.
+    </Fragment>
+  </Hero>
+
+  <!-- Note ******************* -->
+
+  <Note
+    title="NIST Approved:"
+    description={`V12 uses the post-quantum cryptographic algorithms formally selected by NIST in their Post-Quantum Cryptography Standardization project — the gold standard for encryption approved by the U.S. federal government.`}
+  />
+
+  <!-- What Is Quantum-Resistant Encryption? *************** -->
+
+  <Content
+    isReversed
+    tagline="The Basics"
+    title="What Is Quantum-Resistant Encryption — and Why Does It Matter?"
+    items={[
+      {
+        title: 'What Encryption Does Today',
+        description:
+          'Encryption is the process of scrambling data so that only the intended recipient can unscramble and read it. When you upload your identity documents to V12, encryption scrambles them into unreadable gibberish before they ever leave your device. Without the correct decryption key, the data is meaningless to anyone who intercepts it — including V12 itself.',
+      },
+      {
+        title: 'The Quantum Computer Threat',
+        description:
+          'Most encryption used on the internet today — including the kind that protects your bank account and online passwords — relies on mathematical problems that are extremely difficult for a classical computer to solve. Quantum computers, which harness the principles of quantum physics, can solve those same problems exponentially faster. A sufficiently powerful quantum computer could crack today\'s standard encryption in hours or minutes rather than billions of years.',
+      },
+      {
+        title: 'What "Quantum-Resistant" Means',
+        description:
+          'Quantum-resistant encryption — also called post-quantum cryptography — uses different mathematical problems that remain extremely difficult to solve even for quantum computers. These are not merely stronger versions of today\'s encryption; they are built on entirely different mathematical foundations that quantum computing\'s speed advantage cannot exploit.',
+      },
+      {
+        title: 'Why V12 Needs It Now',
+        description:
+          'A quantum computer powerful enough to break today\'s encryption does not yet exist commercially — but cryptographers and governments agree it is a matter of when, not if. Data encrypted today can be harvested and stored by adversaries, then decrypted later once quantum computers are available. Because V12 is designed to protect citizens for decades, it must use quantum-resistant encryption from day one.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Quantum computing visualization representing the future of cryptography',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Built to protect citizens not just today — but for the next 50 years
+      </h3>
+      Quantum computers will exist. V12 is already ready for them.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- NIST Algorithms *************** -->
+
+  <Content
+    isAfterContent
+    tagline="The NIST Standard"
+    title={`The Algorithms NIST Selected — and That V12 Uses`}
+    items={[
+      {
+        title: 'CRYSTALS-Kyber — Key Encapsulation',
+        description:
+          'Kyber is the NIST-selected algorithm for key encapsulation — the process of securely exchanging the secret keys used to encrypt and decrypt data. V12 uses Kyber to protect the keys that unlock citizen identity documents, ensuring that only the designated verifiers can access them. Kyber\'s security is based on the hardness of problems in structured lattices — a class of mathematics that quantum computers cannot efficiently solve.',
+      },
+      {
+        title: 'CRYSTALS-Dilithium — Digital Signatures',
+        description:
+          'Dilithium is the NIST-selected algorithm for digital signatures — the cryptographic equivalent of a legally binding signature. V12 uses Dilithium to sign every transaction, every vote, and every token mint, proving that an action was authorized by the correct party and has not been tampered with. Like Kyber, Dilithium is based on lattice problems that resist quantum attack.',
+      },
+      {
+        title: 'FALCON — Compact Digital Signatures',
+        description:
+          'FALCON is a second NIST-selected signature algorithm that produces smaller signatures than Dilithium, making it more efficient for high-volume operations. V12 uses FALCON where transaction throughput and storage efficiency are paramount — such as certifying the millions of ballot verifications that occur on election day.',
+      },
+      {
+        title: 'SPHINCS+ — Hash-Based Signatures',
+        description:
+          'SPHINCS+ is a NIST-selected signature algorithm based on hash functions rather than lattices, providing a completely different mathematical foundation as a backup layer of security. Its security relies only on the properties of hash functions — one of the most thoroughly analyzed and trusted primitives in all of cryptography.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80',
+      alt: 'Mathematical formulas and cryptographic algorithms on a digital display',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Selected by NIST after a rigorous 6-year global competition
+      </h3>
+      These algorithms were chosen from 82 international candidates submitted by cryptographers worldwide and subjected to years of public scrutiny and attack attempts.
+      Read the official NIST selections at <a href={nistUrl} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">csrc.nist.gov</a>.
+    </Fragment>
+  </Content>
+
+  <!-- Where V12 Uses It *************** -->
+
+  <Features
+    id="where-used"
+    tagline="Where V12 Uses Quantum-Resistant Encryption"
+    title="Every Sensitive Operation Is Protected"
+    subtitle="Quantum-resistant encryption is not a single feature bolted on to V12 — it is woven into every layer of the system that touches sensitive citizen data."
+    items={[
+      {
+        title: 'Identity Document Encryption',
+        description:
+          'When a citizen uploads their birth certificate, driver\'s license, or other identity documents, they are encrypted on the citizen\'s own device using CRYSTALS-Kyber before transmission. The encrypted documents are stored on-chain and can only be decrypted by the specific 20 verifiers who hold the corresponding keys. V12 itself cannot read them.',
+        icon: 'tabler:id-badge',
+      },
+      {
+        title: 'Voter Anonymity',
+        description:
+          'Voting tokens are issued and cast using cryptographic protocols that are quantum-resistant throughout. Even if an adversary records every transaction on the V12 blockchain and later gains access to a quantum computer, they cannot link a specific citizen\'s identity to a specific ballot. Anonymity is mathematical, not procedural.',
+        icon: 'tabler:user-off',
+      },
+      {
+        title: 'Private Transactions',
+        description:
+          'When a citizen chooses to send a private financial transaction on V12, the transaction details — sender, recipient, amount — are encrypted using quantum-resistant algorithms. Only the sender and recipient can read the contents. The network validates the transaction without ever seeing the private data inside it.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Transaction Signatures',
+        description:
+          'Every action on V12 — submitting a vote, transferring tokens, registering an account — is signed using CRYSTALS-Dilithium or FALCON. These signatures prove authenticity and prevent forgery, even against an adversary with a quantum computer attempting to fabricate or alter transactions.',
+        icon: 'tabler:signature',
+      },
+      {
+        title: 'Verifier Key Distribution',
+        description:
+          'When 20 citizen verifiers are randomly selected to review identity documents or certify a ballot, each verifier\'s decryption key is distributed to them using quantum-resistant key encapsulation. No one — including V12 — can intercept or derive those keys.',
+        icon: 'tabler:key',
+      },
+      {
+        title: 'Citizen-to-Citizen Communications',
+        description:
+          'Encrypted notifications sent to citizens — including fraud alerts, verification results, and voting confirmations — are protected end-to-end with quantum-resistant encryption. Not even V12 node operators can read the contents of these messages.',
+        icon: 'tabler:message-2-bolt',
+      },
+    ]}
+  />
+
+  <!-- How It Protects You — Steps ****************** -->
+
+  <Steps
+    title="How Quantum-Resistant Encryption Protects You — Step by Step"
+    subtitle="A plain-English walk-through of what happens to your identity documents from the moment you upload them to the moment your citizenship is verified."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">You Take a Photo on Your Device</span>',
+        description:
+          'You open the V12 app and photograph your identity documents. The photos never leave your device unencrypted. Before any data is transmitted, the V12 app encrypts the documents on your phone or computer using CRYSTALS-Kyber. Without the decryption keys — which your device generates fresh for this specific verification request — the photos are unreadable gibberish.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Encrypted Documents Are Stored On-Chain</span>',
+        description:
+          'The encrypted documents are submitted to the V12 network and recorded on the blockchain. Anyone in the world can see that an encrypted record exists — that is the transparency of a public blockchain — but no one can read the contents without the decryption keys. The data looks like random noise to every observer except the intended verifiers.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Keys Are Distributed to 20 Randomly Selected Verifiers</span>',
+        description:
+          'V12 randomly selects 20 citizen verifiers. Each verifier receives a unique decryption key, delivered using quantum-resistant key encapsulation, that unlocks only their copy of your encrypted documents. No single verifier\'s key can be combined with others to reconstruct a master key. If a verifier\'s key is compromised, only that one copy is exposed.',
+        icon: 'tabler:key',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Verifiers Review, Vote, and Their Keys Expire</span>',
+        description:
+          'Each verifier uses the V12 app to decrypt and review your documents on their own device, then casts their vote — verified or not verified. Once the verification process is complete, the decryption keys expire and are deleted. Even if someone gained access to a verifier\'s device years later, the keys needed to read your documents would no longer exist.',
+        icon: 'tabler:checkbox',
+      },
+      {
+        title: 'Step 5: <span class="font-medium">Your Citizenship Token Is Minted</span>',
+        description:
+          'Once 12 of 20 verifiers confirm your identity, a Citizenship Token is automatically minted and sent to your wallet by smart contract. The token proves your citizenship cryptographically — without revealing your name, address, or any other personal detail. You are verified as a citizen, completely anonymously.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Your Identity. Your Privacy. Mathematically Guaranteed.',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Padlock on a digital interface representing encrypted data protection',
+    }}
+  />
+
+  <!-- Why NIST? *************** -->
+
+  <Features2
+    tagline="Why NIST?"
+    title="The Most Rigorous Cryptographic Vetting Process on Earth"
+    subtitle="NIST's Post-Quantum Cryptography Standardization project is not a marketing label. It is a multi-year, globally competitive process that produced the strongest publicly available post-quantum algorithms in existence."
+    items={[
+      {
+        title: '82 Candidates from Around the World',
+        description:
+          'In 2016, NIST issued an open call for post-quantum cryptographic algorithms. Cryptographers from universities, research labs, and private companies across 25 countries submitted 82 candidates for evaluation.',
+        icon: 'flat-color-icons:globe',
+      },
+      {
+        title: 'Six Years of Public Scrutiny',
+        description:
+          'For six years, the world\'s leading cryptographers attempted to break every submitted algorithm. Candidates that showed any vulnerability were eliminated. Only those that withstood the full force of the global cryptographic community advanced.',
+        icon: 'flat-color-icons:timeline',
+      },
+      {
+        title: 'Four Algorithms Selected in 2022',
+        description:
+          'In July 2022, NIST announced the selection of four algorithms — CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON, and SPHINCS+ — as the foundation of the new post-quantum cryptography standard. These are the algorithms V12 uses.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Endorsed by the U.S. Federal Government',
+        description:
+          'NIST standards are adopted across the U.S. federal government, including by the NSA and the Department of Defense. Federal agencies are already transitioning to these algorithms. V12 uses the same encryption that protects classified U.S. government communications.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Open and Publicly Verified',
+        description:
+          'Unlike classified government encryption, these algorithms are published openly and have been analyzed by thousands of independent researchers worldwide. Their security is not based on secrecy — it is based on mathematical hardness that anyone can verify.',
+        icon: 'flat-color-icons:key',
+      },
+      {
+        title: 'The Only Responsible Choice',
+        description:
+          'For a system designed to protect American elections and financial privacy for decades, there is no responsible alternative. NIST\'s selected algorithms represent the current state of the art in provably quantum-resistant cryptography.',
+        icon: 'flat-color-icons:lock',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- FAQs ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Common questions about quantum-resistant encryption and how it protects V12 citizens."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Do quantum computers exist today?',
+        description:
+          'Quantum computers exist in research labs and are available in limited form from companies like IBM and Google, but they are not yet powerful enough to break today\'s standard encryption. However, governments and major corporations are investing heavily to change this. Most cryptographers and national security agencies expect quantum computers capable of breaking current encryption to exist within the next 10–20 years. V12 is prepared now so its citizens do not need to worry about it then.',
+      },
+      {
+        title: 'Will this slow down V12 transactions?',
+        description:
+          'Post-quantum algorithms do require slightly more computation than the classical algorithms they replace, but the difference is negligible on modern hardware. ANTELOPE Leap 5.0\'s architecture is efficient enough to absorb this overhead without any meaningful impact on transaction speed or cost. Citizens will not notice any difference.',
+      },
+      {
+        title: 'What is a lattice problem, and why can\'t quantum computers solve it?',
+        description:
+          'A lattice is a grid of points in a high-dimensional mathematical space. Finding the shortest path between points in a very high-dimensional lattice is extraordinarily difficult — and unlike the mathematical problems that quantum computers are good at solving, lattice problems do not become easier with quantum computing techniques. The best known quantum algorithms offer essentially no advantage over classical computers when attacking well-constructed lattice-based cryptography.',
+      },
+      {
+        title: 'Can V12\'s encryption be upgraded in the future if new threats emerge?',
+        description:
+          'Yes. Cryptographic agility — the ability to swap in new algorithms without rebuilding the entire system — is a design requirement for V12. If a future vulnerability is discovered in one of the NIST algorithms, V12\'s governance process allows the network to migrate to a replacement algorithm through an on-chain citizen vote. No emergency shutdown or data loss is required.',
+      },
+      {
+        title: 'Who has access to my identity documents?',
+        description:
+          'Only the 20 randomly selected citizen verifiers assigned to your verification request receive decryption keys for your documents. V12 nodes store only the encrypted ciphertext — they cannot read the underlying documents. After your verification is complete, the decryption keys expire. Your documents cannot be accessed by anyone after that point, including the original 20 verifiers.',
+      },
+      {
+        title: 'Where can I read about the NIST selected algorithms myself?',
+        description:
+          `NIST publishes full technical specifications, background documents, and the official selection announcements publicly. You can read the official NIST Post-Quantum Cryptography selected algorithms at csrc.nist.gov. No special access or expertise is required to read the documentation — NIST provides plain-language summaries alongside the technical specifications.`,
+      },
+    ]}
+  />
+
+  <!-- CTA *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Read the NIST Standard',
+        href: nistUrl,
+        target: '_blank',
+        icon: 'tabler:external-link',
+      },
+      {
+        variant: 'secondary',
+        text: 'Buy a Witness Node',
+        href: '/#buy-node',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      The Strongest Encryption on Earth.<br class="block sm:hidden" />
+      <span class="sm:whitespace-nowrap">Protecting Every American Citizen.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      V12 uses the same post-quantum cryptographic algorithms that the U.S. federal government
+      is adopting to protect classified communications — selected by NIST after six years of
+      global cryptographic competition.
+      <br class="hidden md:inline" /><br class="hidden md:inline" />
+      Your vote is anonymous. Your identity is private. Your transactions are yours alone.
+      And no quantum computer — today or in the future — can change that.
+    </Fragment>
+  </CallToAction>
+
+</Layout>

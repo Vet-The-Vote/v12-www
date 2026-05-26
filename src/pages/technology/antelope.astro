@@ -1,0 +1,372 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'ANTELOPE Leap 5.0 — The Blockchain Runtime Powering V12',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero ******************* -->
+
+  <Hero
+    tagline="Technology"
+    actions={[
+      { variant: 'primary', text: 'Buy a Witness Node', href: 'https://square.link/u/oIQIRY3V?src=embed', icon: 'tabler:shield-check' },
+      { text: 'Back to Home', href: '/' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'High-speed data processing representing blockchain throughput',
+    }}
+  >
+    <Fragment slot="title">
+      Built on <span class="text-accent dark:text-white">ANTELOPE Leap 5.0</span> —<br />
+      The Fastest Proven Blockchain Runtime in the World
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      V12 is built on ANTELOPE Leap 5.0, the same battle-tested blockchain runtime that has been
+      processing millions of transactions per day for years across multiple major networks.
+      It gives V12 the speed, reliability, and low cost needed to handle national-scale
+      election verification and payment processing simultaneously — without breaking a sweat.
+    </Fragment>
+  </Hero>
+
+  <!-- Note ******************* -->
+
+  <Note
+    title="Performance at a Glance:"
+    description="Thousands of transactions per second, sub-second finality, and a flat $0.16 per transaction — orders of magnitude cheaper than the hidden 3% bank tax Americans pay today."
+  />
+
+  <!-- What Is ANTELOPE? *************** -->
+
+  <Content
+    isReversed
+    tagline="What Is ANTELOPE?"
+    title="ANTELOPE — In Plain English"
+    items={[
+      {
+        title: 'The Engine Under the Hood',
+        description:
+          'If V12 were a car, ANTELOPE Leap 5.0 would be the engine. It is the core software that runs on every one of V12\'s 42,000 Witness Nodes, coordinating how transactions are submitted, validated, ordered, and permanently recorded. Citizens interact with the V12 app; ANTELOPE handles everything happening beneath the surface.',
+      },
+      {
+        title: 'A Delegated Proof-of-Stake Blockchain',
+        description:
+          'ANTELOPE uses a consensus mechanism called Delegated Proof of Stake (DPoS). Instead of requiring every node to solve a complex math puzzle like Bitcoin — which wastes enormous amounts of electricity — ANTELOPE selects a rotating set of trusted block producers to confirm transactions in sequence. This makes it orders of magnitude faster and more energy-efficient than proof-of-work blockchains.',
+      },
+      {
+        title: 'Proven in Production',
+        description:
+          'ANTELOPE is not experimental technology. It has been running in production on major public blockchains — including EOS, Telos, WAX, and UX Network — processing real transactions for real users since 2018. Leap 5.0 is the latest, most mature, and most optimized version of this runtime.',
+      },
+      {
+        title: 'Open Source and Auditable',
+        description:
+          'ANTELOPE Leap is fully open source. Every line of its code is publicly available for any developer or security researcher in the world to inspect, audit, and verify. There are no proprietary black boxes in the software that runs V12.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Circuit board representing the computational foundation of the ANTELOPE runtime',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Years of real-world production experience — not a lab prototype
+      </h3>
+      ANTELOPE Leap 5.0 has been refined through millions of hours of real-world use across multiple major blockchain networks before V12 ever ran a single transaction.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Key Stats ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Transactions Per Second', amount: '4,000+' },
+      { title: 'Time to Finality', amount: '<1 sec' },
+      { title: 'Years in Production', amount: '7+' },
+      { title: 'Cost Per Transaction', amount: '$0.16' },
+    ]}
+  />
+
+  <!-- Why ANTELOPE for V12? *************** -->
+
+  <Features
+    id="why-antelope"
+    tagline="Why ANTELOPE for V12?"
+    title="The Right Tool for a National-Scale Mission"
+    subtitle="V12 needs to handle millions of identity verifications, hundreds of millions of votes, and billions of financial transactions. ANTELOPE Leap 5.0 is the only proven open-source blockchain runtime capable of all three."
+    items={[
+      {
+        title: 'National-Scale Throughput',
+        description:
+          'With over 150 million registered voters in the United States, a voting system must be able to process a massive surge of transactions on election day without slowing down. ANTELOPE\'s throughput of thousands of transactions per second handles this comfortably — even at peak load.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Sub-Second Transaction Finality',
+        description:
+          'On most blockchains, a transaction is not truly confirmed for minutes or even hours. On ANTELOPE, transactions reach finality in under one second. This means a citizen\'s vote is certified and permanently recorded almost instantly after they submit it.',
+        icon: 'tabler:clock-bolt',
+      },
+      {
+        title: 'Near-Zero Transaction Costs',
+        description:
+          'Ethereum transactions can cost tens of dollars during busy periods. ANTELOPE\'s efficiency is what makes V12\'s flat $0.16 per transaction possible — far cheaper than the $0.10 flat fee plus 3% that banks currently charge on every purchase.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Energy Efficient by Design',
+        description:
+          'Bitcoin\'s proof-of-work consensus consumes as much electricity as a mid-sized country. ANTELOPE\'s Delegated Proof of Stake uses a negligible fraction of that energy — making V12 environmentally responsible without sacrificing any performance.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Flexible Resource Model',
+        description:
+          'ANTELOPE uses a resource model based on CPU time, network bandwidth, and storage — not a fee auction like Ethereum. This gives V12 predictable, stable transaction costs that don\'t spike during busy periods, which is critical for a system handling election-day traffic.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'EVM Layer on Top',
+        description:
+          'ANTELOPE Leap 5.0 supports a full EVM layer (EOS EVM 0.6.0), meaning V12 gets the best of both worlds: ANTELOPE\'s speed and efficiency at the base layer, with full Ethereum smart contract compatibility on top. Developers can write Vyper or Solidity contracts and deploy them directly to V12.',
+        icon: 'tabler:currency-ethereum',
+      },
+    ]}
+  />
+
+  <!-- How Consensus Works ****************** -->
+
+  <Steps
+    title="How ANTELOPE Reaches Consensus — Step by Step"
+    subtitle="Consensus is the process by which all 42,000 V12 Witness Nodes agree on the official record of every transaction. Here is how it works in plain English."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">A Citizen Submits a Transaction</span>',
+        description:
+          'A citizen uses the V12 app to take an action — casting a vote, transferring tokens, verifying an identity. The app packages this action into a transaction and broadcasts it to the V12 network.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Block Producers Receive the Transaction</span>',
+        description:
+          'A rotating set of elected Block Producers — full Witness Nodes that the V12 community has chosen to produce blocks — receive the transaction and verify that it is valid: the signature is genuine, the citizen has the required tokens or permissions, and the action is allowed by the relevant smart contract.',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">The Transaction Is Included in a Block</span>',
+        description:
+          'The active Block Producer bundles the transaction with others into a new block and broadcasts it to the rest of the network. Blocks are produced every 500 milliseconds — half a second — so transactions are processed almost as fast as you can submit them.',
+        icon: 'tabler:stack-2',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Other Nodes Validate and Confirm</span>',
+        description:
+          'All other Witness Nodes independently verify the new block against the rules of the V12 network. If the block is valid — which it will be if the Block Producer followed the rules — they accept it and add it to their own copy of the blockchain.',
+        icon: 'tabler:network',
+      },
+      {
+        title: 'Step 5: <span class="font-medium">Finality Is Reached in Under One Second</span>',
+        description:
+          'Once a supermajority of Block Producers have confirmed the block, the transaction reaches finality — it is permanently and irrevocably part of the blockchain record. No one can alter or remove it. The citizen\'s action is now on the official, permanent record.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Immutable. Transparent. Permanent.',
+        icon: 'tabler:flag',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Network of connected nodes reaching consensus',
+    }}
+  />
+
+  <!-- System Contracts *************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    tagline="System Contracts"
+    title="EOS System Contracts 3.2.0 — The Rules of the Road"
+    items={[
+      {
+        title: 'What Are System Contracts?',
+        description:
+          'System contracts are a set of smart contracts that govern the most fundamental rules of the ANTELOPE blockchain itself — how accounts are created, how tokens are staked, how Block Producers are elected, and how resources are allocated. Think of them as the constitution of the V12 network, written in code.',
+      },
+      {
+        title: 'Version 3.2.0 — Battle-Tested Stability',
+        description:
+          'V12 uses EOS System Contracts version 3.2.0, the most stable and thoroughly audited version available. These contracts have been running on live public blockchains handling real economic value, which means their edge cases are well understood and their bugs have already been found and fixed.',
+      },
+      {
+        title: 'Block Producer Elections',
+        description:
+          'The system contracts govern how Witness Nodes are elected as Block Producers. V12 token holders stake their tokens to vote for the Block Producers they trust. The nodes with the most votes earn the right to produce blocks — and the rewards that come with it. Votes are re-counted continuously, so poor-performing or misbehaving nodes can be voted out at any time.',
+      },
+      {
+        title: 'On-Chain Governance of the System Contracts Themselves',
+        description:
+          'Even the system contracts themselves can only be upgraded through an on-chain governance process requiring approval from a supermajority of elected Block Producers. No single party — not even the original V12 development team — can modify the foundational rules of the network unilaterally.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80',
+      alt: 'Legal documents representing the foundational rules governing the V12 network',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        The foundation no one can move
+      </h3>
+      EOS System Contracts 3.2.0 set the immutable ground rules that every participant — node operators, citizens, developers — must follow.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- ANTELOPE vs. The Competition *************** -->
+
+  <Features2
+    tagline="How ANTELOPE Compares"
+    title="Why Not Bitcoin or Ethereum?"
+    subtitle="Every blockchain makes trade-offs. Here is why ANTELOPE Leap 5.0 is the right choice for the specific demands of V12."
+    items={[
+      {
+        title: 'Bitcoin: Too Slow, Too Expensive',
+        description:
+          'Bitcoin processes about 7 transactions per second and can take an hour to reach finality. Its transaction fees regularly exceed $5–$50. A national voting or payment system cannot be built on these constraints.',
+        icon: 'flat-color-icons:disapprove',
+      },
+      {
+        title: 'Ethereum: Faster, But Still Not Enough',
+        description:
+          'Ethereum processes roughly 15–30 transactions per second on its base layer, with fees that spike to tens of dollars during busy periods. Even Ethereum\'s Layer 2 solutions add complexity and trust assumptions that are inappropriate for election infrastructure.',
+        icon: 'flat-color-icons:disapprove',
+      },
+      {
+        title: 'ANTELOPE: Built for This',
+        description:
+          'ANTELOPE handles thousands of transactions per second at a flat $0.16 per transaction with sub-second finality — and has done so continuously in production for over seven years. It is the only proven open-source runtime that meets every requirement V12 has.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Energy: No Wasted Computation',
+        description:
+          'ANTELOPE\'s DPoS consensus uses only a tiny fraction of the energy that Bitcoin\'s proof-of-work requires. V12 Witness Nodes can run on a standard home computer or small server — no specialized mining hardware needed.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'EVM Compatibility: Best of Both',
+        description:
+          'By running EOS EVM on top of ANTELOPE, V12 inherits Ethereum\'s entire developer ecosystem and smart contract toolchain without inheriting Ethereum\'s performance and cost limitations.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Proven Governance Model',
+        description:
+          'ANTELOPE\'s DPoS and system contracts have governed live public blockchains with real economic stakes for years. The governance model is not theoretical — it has been tested by real communities making real decisions.',
+        icon: 'flat-color-icons:approval',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- FAQs ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Common questions about ANTELOPE Leap 5.0 and how it powers V12."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What is Delegated Proof of Stake, and is it secure?',
+        description:
+          'Delegated Proof of Stake (DPoS) is a consensus mechanism where token holders vote for a set of trusted Block Producers who take turns confirming transactions. Security comes from the fact that misbehaving Block Producers can be voted out immediately by the community, and any attempt to manipulate the chain requires controlling a supermajority of elected producers simultaneously — which would require owning an enormous fraction of all staked V12 tokens. DPoS has secured billions of dollars in assets on live public networks for over seven years.',
+      },
+      {
+        title: 'How does ANTELOPE handle a sudden surge in transactions on election day?',
+        description:
+          'ANTELOPE\'s resource model allocates network capacity proportionally to staked tokens, rather than running a fee auction. This means transaction costs stay stable even when the network is busy. Block Producers can also increase block sizes and block production rates within governance-approved limits to handle temporary surges. V12 will provision network capacity with election-day peak loads specifically in mind.',
+      },
+      {
+        title: 'Can ANTELOPE Leap 5.0 be upgraded in the future?',
+        description:
+          'Yes, but only through an on-chain governance process. Any upgrade to the core ANTELOPE software running on V12 must be approved by a supermajority of elected Block Producers, giving the entire community visibility into and control over changes to the network\'s foundational software.',
+      },
+      {
+        title: 'How many Block Producers does V12 have?',
+        description:
+          'ANTELOPE networks typically operate with 21 active Block Producers at any given time, elected from a larger pool of standby producers. V12 will follow this model, with the exact number of active producers set by the system contracts and adjustable through on-chain governance. The 42,000 total Witness Nodes participate in the network by processing and relaying transactions and by voting for Block Producers.',
+      },
+      {
+        title: 'Is ANTELOPE Leap 5.0 quantum resistant?',
+        description:
+          'The base ANTELOPE layer uses elliptic curve cryptography (ECDSA), which is not quantum resistant on its own. However, V12 layers NIST-approved post-quantum cryptographic algorithms on top of ANTELOPE for all sensitive operations — including identity document encryption, ballot privacy, and citizen communications. This hybrid approach provides quantum resistance where it is most critical while maintaining full compatibility with the ANTELOPE ecosystem.',
+      },
+      {
+        title: 'Where can I read more about ANTELOPE Leap 5.0?',
+        description:
+          'ANTELOPE Leap is fully open source. The source code, documentation, and release notes for Leap 5.0 are publicly available at the Antelope Coalition\'s official repositories. V12 will also publish its own technical documentation explaining exactly how it configures and extends ANTELOPE for its specific use cases.',
+      },
+    ]}
+  />
+
+  <!-- CTA *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Buy a Witness Node',
+        href: '/#buy-node',
+        icon: 'tabler:shield-check',
+      },
+      {
+        variant: 'secondary',
+        text: 'Learn About EVM Compatibility',
+        href: '/technology/evm',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Seven Years of Production-Proven Technology.<br class="block sm:hidden" />
+      <span class="sm:whitespace-nowrap">Now Protecting American Elections.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      ANTELOPE Leap 5.0 is not an experiment — it is mature, battle-tested infrastructure
+      that has processed billions of real transactions on live public networks.
+      V12 puts this proven technology to work for We The People.
+      <br class="hidden md:inline" /><br class="hidden md:inline" />
+      Run a Witness Node and become part of the most important blockchain network ever built.
+    </Fragment>
+  </CallToAction>
+
+</Layout>

@@ -1,0 +1,355 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'EVM Compatible Blockchain & Smart Contract Governance',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero ******************* -->
+
+  <Hero
+    tagline="Technology"
+    actions={[
+      { variant: 'primary', text: 'Buy a Witness Node', href: 'https://square.link/u/oIQIRY3V?src=embed', icon: 'tabler:shield-check' },
+      { text: 'Back to Home', href: '/' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Blockchain network nodes representing decentralized computing',
+    }}
+  >
+    <Fragment slot="title">
+      V12 Is <span class="text-accent dark:text-white">EVM Compatible</span> —<br />
+      Governed Entirely by Smart Contracts
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      V12 runs a full Ethereum Virtual Machine, meaning any smart contract written for Ethereum works
+      on V12 out of the box. More importantly, every critical function of the V12 network —
+      from registering new users to minting tokens to verifying votes — is governed not by people,
+      but by transparent, auditable smart contracts that anyone can read and verify.
+    </Fragment>
+  </Hero>
+
+  <!-- Note ******************* -->
+
+  <Note
+    title="Plain English Governance:"
+    description="V12 smart contracts are written in Vyper — a language designed to be readable by non-technical people, not just engineers."
+  />
+
+  <!-- What is EVM? *************** -->
+
+  <Content
+    isReversed
+    tagline="What Is EVM?"
+    title="The Ethereum Virtual Machine — In Plain English"
+    items={[
+      {
+        title: 'Think of It Like a Global Computer',
+        description:
+          'The Ethereum Virtual Machine (EVM) is a shared computing environment that runs the same way on every node in a blockchain network. When a smart contract runs on V12, it produces the exact same result on all 42,000 Witness Nodes simultaneously — there is no central server, and no single point of control or failure.',
+      },
+      {
+        title: 'Smart Contracts Replace Middlemen',
+        description:
+          'A smart contract is a set of rules written in code that executes automatically when conditions are met. It works like a vending machine: you put in the right input, and the machine always delivers the same output — no human decision required, no opportunity for bias or corruption.',
+      },
+      {
+        title: 'EVM Compatibility Means a Proven Ecosystem',
+        description:
+          'Because V12 is EVM compatible, it can use the same developer tools, security auditing firms, and smart contract standards that have been battle-tested on Ethereum — the most widely used smart contract platform in the world, securing hundreds of billions of dollars in assets.',
+      },
+      {
+        title: 'Built on ANTELOPE Leap 5.0',
+        description:
+          'V12 runs the EOS EVM (version 0.6.0) on top of the ANTELOPE Leap 5.0 runtime, combining Ethereum\'s smart contract compatibility with ANTELOPE\'s industry-leading transaction throughput — thousands of transactions per second at a fraction of Ethereum\'s cost.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80',
+      alt: 'Server nodes in a data center representing distributed computing',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        No servers. No administrators. No corruption.
+      </h3>
+      The rules are written in code, deployed on-chain, and enforced automatically by mathematics — not by people.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Why Vyper **************** -->
+
+  <Content
+    isAfterContent
+    tagline="Why Vyper?"
+    title="Smart Contracts Written to Be Read — Not Just by Computers"
+    items={[
+      {
+        title: 'Designed for Clarity, Not Cleverness',
+        description:
+          'Vyper is a smart contract language that deliberately limits complex programming tricks. This makes the code shorter, simpler, and far easier for a non-technical person to follow than alternatives like Solidity. If you can read a set of rules written in plain English, you can follow a Vyper contract.',
+      },
+      {
+        title: 'One Way to Do Things',
+        description:
+          'Unlike most programming languages, Vyper has only one correct way to write any given logic. This eliminates ambiguity — the contract says exactly what it does, and does exactly what it says. There are no hidden behaviors or unexpected side effects.',
+      },
+      {
+        title: 'Audited and Verified',
+        description:
+          'Because Vyper contracts are simple and unambiguous, security auditors can review them thoroughly in less time. Every V12 governance contract will be publicly audited, with audit reports available for anyone to review on the V12 website.',
+      },
+      {
+        title: 'Comments Written in Plain English',
+        description:
+          'Every V12 smart contract includes line-by-line comments in plain English explaining what each rule does and why. A citizen with no programming background can read the comments and understand exactly how a contract governs them.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Person reading clear documentation on a laptop',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Governance you can actually read
+      </h3>
+      V12 will publish every governance contract alongside a plain-English summary so every citizen understands the rules that govern them.
+    </Fragment>
+  </Content>
+
+  <!-- What Is Governed by Smart Contracts *************** -->
+
+  <Features
+    id="governance"
+    tagline="Smart Contract Governance"
+    title="Every Critical V12 Function Is Governed by Code — Not People"
+    subtitle="There are no administrators with override access, no board of directors who can change the rules, and no politicians who can interfere. The following functions are entirely controlled by on-chain smart contracts."
+    items={[
+      {
+        title: 'New User Registration',
+        description:
+          'When a new user creates a V12 account, a smart contract automatically generates a unique, anonymous account identifier and records it on-chain. No employee approves or denies the registration. The contract\'s rules are the only authority.',
+        icon: 'tabler:user-plus',
+      },
+      {
+        title: 'Identity & Address Verification',
+        description:
+          'The smart contract randomly selects 20 citizen verifiers from the eligible pool, distributes encrypted documents to each, collects their votes, and — when 12 of 20 agree — automatically approves the verification. No human coordinator is involved in the selection or the decision.',
+        icon: 'tabler:id-badge',
+      },
+      {
+        title: 'Minting V12 Tokens',
+        description:
+          'New V12 tokens are created only when a smart contract confirms that real work has been completed — a verification approved, a node running, a transaction processed. The contract controls the mint. There is no treasury, no central bank, and no person who can print tokens on demand.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Token Distribution',
+        description:
+          'When tokens are minted, a separate distribution contract automatically sends the correct amount to the correct wallet — the verified citizen, the node operators, the verifiers who did the work. Distribution is instantaneous, automatic, and tamper-proof.',
+        icon: 'tabler:arrows-split-2',
+      },
+      {
+        title: 'Vote Certification',
+        description:
+          'On voting day, a smart contract manages the entire ballot certification process: accepting the voter\'s digital ballot, assigning 20 random certifiers, collecting their confirmations, and recording the certified vote on-chain — all without a human election official touching the result.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Network Governance & Rule Changes',
+        description:
+          'Any change to the rules of the V12 network itself must be proposed and voted on by V12 token holders through a governance smart contract. No individual — not even the original creators of V12 — can unilaterally change the rules after the contracts are deployed.',
+        icon: 'tabler:settings',
+      },
+    ]}
+  />
+
+  <!-- How Governance Works — Steps ****************** -->
+
+  <Steps
+    title="How Smart Contract Governance Works in Practice"
+    subtitle="A plain-English walk through of what actually happens when a V12 smart contract runs."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">A Citizen Takes an Action</span>',
+        description:
+          'A citizen opens the V12 app and submits a request — to register, to verify their identity, to cast a ballot, or to propose a governance change. The app sends that request to the V12 network as a transaction.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">The Transaction Reaches the Smart Contract</span>',
+        description:
+          'The transaction arrives at the relevant smart contract on-chain. The contract checks whether all conditions are met — is the citizen registered? Have they already submitted this request? Is the timing correct? — using only the rules written in its code.',
+        icon: 'tabler:file-code',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">The Contract Executes Automatically</span>',
+        description:
+          'If all conditions are met, the contract executes its instructions: it might select 20 random verifiers, mint a token, record a vote, or distribute a payment. These actions happen on all 42,000 Witness Nodes simultaneously and are permanently recorded on the blockchain.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">The Result Is Permanent and Public</span>',
+        description:
+          'Every action taken by every smart contract is written permanently to the V12 blockchain and is publicly visible. Any citizen — or any court — can inspect the full history of every decision the network has ever made. Nothing can be altered or deleted after the fact.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Step 5: <span class="font-medium">Anyone Can Verify the Rules</span>',
+        description:
+          'All V12 smart contracts are open source and published on-chain. Any citizen can read the Vyper code and the plain-English comments alongside it. Any developer in the world can audit the contracts. There are no secret rules and no hidden levers.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Governance by the People, Not by Insiders',
+        icon: 'tabler:flag',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Data flowing through a transparent system representing smart contract execution',
+    }}
+  />
+
+  <!-- EVM Ecosystem Benefits *************** -->
+
+  <Features2
+    tagline="EVM Ecosystem"
+    title="What EVM Compatibility Gives V12 Citizens"
+    subtitle="By running a full EVM, V12 inherits the tools, security standards, and developer talent of the world's largest smart contract ecosystem."
+    items={[
+      {
+        title: 'Use Any Ethereum Wallet',
+        description:
+          'Citizens can use MetaMask, Coinbase Wallet, or any other Ethereum-compatible wallet to interact with V12 — no new software required.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Industry-Standard Security Audits',
+        description:
+          'The world\'s top smart contract security firms — Consensys Diligence, Trail of Bits, OpenZeppelin — all audit EVM contracts. V12 benefits from this entire ecosystem of expertise.',
+        icon: 'flat-color-icons:lock',
+      },
+      {
+        title: 'Proven Token Standards',
+        description:
+          'V12 tokens follow established EVM token standards (ERC-20 compatible), meaning they work automatically with thousands of existing wallets, exchanges, and financial applications.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Open Source Tooling',
+        description:
+          'Developers building on V12 can use Hardhat, Foundry, Remix, and every other Ethereum development tool without modification — dramatically lowering the barrier to building on V12.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Transparent On-Chain Data',
+        description:
+          'Every transaction, every token mint, every governance vote is recorded on V12\'s public chain and can be inspected by any citizen using standard Ethereum block explorer tools.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Future-Proof Architecture',
+        description:
+          'EVM is the most widely adopted smart contract standard in the world. Building on EVM ensures that V12 remains compatible with the broader blockchain ecosystem for decades to come.',
+        icon: 'flat-color-icons:globe',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- FAQs ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Common questions about V12's EVM compatibility and smart contract governance."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Do I need to understand programming to participate in V12 governance?',
+        description:
+          'No. Every V12 governance contract will be published with a plain-English summary that explains what the contract does in ordinary language. Citizens vote on governance proposals through the V12 app using a simple interface — the underlying code handles the rest automatically.',
+      },
+      {
+        title: 'Can the rules of V12 be changed without citizens knowing?',
+        description:
+          'No. All governance contracts are deployed on-chain and publicly visible. Any proposed change to the network rules must be submitted as a governance proposal and voted on by V12 token holders. The proposal, the vote count, and the outcome are all permanently recorded on-chain for anyone to inspect.',
+      },
+      {
+        title: 'What stops someone from writing a smart contract that cheats?',
+        description:
+          'Smart contracts do exactly what their code says — nothing more, nothing less. All V12 governance contracts are open source, meaning anyone in the world can read and audit them before they are deployed. Independent security firms will audit the contracts, and their reports will be publicly available. After deployment, the contracts cannot be modified without another on-chain governance vote.',
+      },
+      {
+        title: 'Why Vyper instead of Solidity, the more popular language?',
+        description:
+          'Solidity is more powerful but also more complex, which makes it harder to audit and easier to hide subtle bugs or backdoors. Vyper trades some flexibility for simplicity and clarity — it is deliberately limited so that contracts are easier to read, easier to audit, and harder to manipulate. For a governance system that citizens need to be able to trust, clarity is more valuable than cleverness.',
+      },
+      {
+        title: 'What happens if a bug is found in a governance contract?',
+        description:
+          'All critical V12 contracts will include a time-locked upgrade mechanism governed by a citizen vote. If a bug is discovered, a fix can be proposed, audited publicly, voted on by token holders, and — after a mandatory waiting period — deployed. The waiting period ensures no one can rush through a malicious change. The entire process is itself governed by a smart contract.',
+      },
+      {
+        title: 'Is V12\'s EVM the same as Ethereum\'s EVM?',
+        description:
+          'V12 runs EOS EVM version 0.6.0, which is fully compatible with Ethereum\'s EVM specification. Smart contracts compiled for Ethereum deploy and run identically on V12. The primary difference is that V12 runs on top of ANTELOPE Leap 5.0, which provides dramatically higher throughput and lower transaction costs than Ethereum\'s base layer.',
+      },
+    ]}
+  />
+
+  <!-- CTA *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Buy a Witness Node',
+        href: '/#buy-node',
+        icon: 'tabler:shield-check',
+      },
+      {
+        variant: 'secondary',
+        text: 'Back to Home',
+        href: '/',
+        icon: 'tabler:arrow-left',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Governance by Code.<br class="block sm:hidden" />
+      <span class="sm:whitespace-nowrap">Power to the People.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      V12's smart contracts are the constitution of America 2.0 — written in plain English,
+      enforced by mathematics, and beyond the reach of any politician, corporation, or corrupt official.
+      <br class="hidden md:inline" /><br class="hidden md:inline" />
+      Run a Witness Node and become part of the infrastructure that enforces these rules
+      for every citizen in the country.
+    </Fragment>
+  </CallToAction>
+
+</Layout>
