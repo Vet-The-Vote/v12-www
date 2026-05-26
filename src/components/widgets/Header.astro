@@ -127,6 +127,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             </li>
           ))
         }
+        {actions?.length ? actions.map((btnProps) => (
+          <li class="min-[1205px]:hidden flex justify-end px-4 py-3">
+            <Button {...btnProps} class="py-2.5 px-5.5 font-semibold shadow-none text-sm w-auto" />
+          </li>
+        )) : null}
       </ul>
     </nav>
     <div

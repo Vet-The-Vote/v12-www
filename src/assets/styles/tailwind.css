@@ -84,8 +84,14 @@
   top: 70px;
   left: 0;
   right: 0;
-  bottom: 70px !important;
+  bottom: 0 !important;
   padding: 0 5px;
+}
+
+@media (max-width: 1204px) {
+  #header > div > div:last-child {
+    display: none !important;
+  }
 }
 
 .dropdown:focus .dropdown-menu,
