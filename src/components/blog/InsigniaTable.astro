@@ -1,0 +1,88 @@
+---
+const insignias = [
+  { rank: 'Jonin Prime',    series: '27 nodes',     emblem: '5 Stars',          file: 'Rank1-V12-Jonin-Prime-node-faceplate-1-of-27.png' },
+  { rank: 'Jonin Legatus',  series: '148 nodes',    emblem: '4 Stars',          file: 'Rank2-v12-Jonin-Legatus-node-faceplate-1-of-148.png' },
+  { rank: 'Jonin Majoris',  series: '240 nodes',    emblem: '2 Stars',          file: 'Rank3-v12-Jonin-Majoris-node-faceplate-1-of-240.png' },
+  { rank: 'Chunin Prime',   series: '1,024 nodes',  emblem: 'Eagle',            file: 'Rank4-V12-Chunin-Prime-node-faceplate-1-of-1024.png' },
+  { rank: 'Chunin Legatus', series: '2,048 nodes',  emblem: 'Silver Maple Leaf',file: 'Rank5-V12-Chunin-Legatus-node-faceplate-1-of-2048.png' },
+  { rank: 'Chunin Majoris', series: '4,096 nodes',  emblem: 'Brass Maple Leaf', file: 'Rank6-V12-Chunin-Majoris-node-faceplate-1-of-4096.png' },
+  { rank: 'Genin Maximus',  series: '8,192 nodes',  emblem: 'Two Silver Bars',  file: 'Rank7-V12-Genin-Maximus-node-faceplate-1-of-8192.png' },
+  { rank: 'Genin Gladius',  series: '16,384 nodes', emblem: 'Shield & Sword',   file: 'Rank8-V12-Genin-Gladius-node-faceplate-1-of-16384.png' },
+  { rank: 'Genin Dýr',      series: '9,841 nodes',  emblem: 'Choice of Weapons',file: 'Rank9-V12-Genin-Dýr-node-faceplate-1-of-9841.png' },
+];
+---
+
+<div class="not-prose overflow-x-auto">
+  <table class="w-full text-sm border-collapse">
+    <thead>
+      <tr class="border-b-2 border-gray-300 dark:border-gray-600 text-left">
+        <th class="py-0 pr-6 font-semibold">Rank</th>
+        <th class="py-0 pr-6 font-semibold">Series</th>
+        <th class="py-0 pr-6 font-semibold">Emblem</th>
+        <th class="py-0 font-semibold">Insignia</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+      {insignias.map(({ rank, series, emblem, file }) => (
+        <tr class="py-0 my-0">
+          <td class="my-0 py-2 pr-6 font-medium align-middle">{rank}</td>
+          <td class="my-0 py-2 pr-6 text-muted align-middle">{series}</td>
+          <td class="my-0 py-2 pr-6 text-muted align-middle">{emblem}</td>
+          <td class="my-0 py-2 align-middle">
+            <img
+              src={`/images/insignias/${file}`}
+              alt={`${rank} Insignia`}
+              class="my-0 py-0 insignia-thumb block h-16 w-auto cursor-pointer rounded hover:opacity-80 transition-opacity"
+              data-full={`/images/insignias/${file}`}
+            />
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<!-- Lightbox modal -->
+<div id="insignia-modal" class="hidden fixed inset-0 bg-black/85 z-[9999] items-center justify-center">
+  <button
+    id="modal-close"
+    aria-label="Close"
+    class="absolute top-4 right-6 text-white text-5xl leading-none cursor-pointer bg-transparent border-none p-1 hover:text-gray-300 transition-colors"
+  >&times;</button>
+  <img
+    id="modal-img"
+    src=""
+    alt=""
+    class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+  />
+</div>
+
+<script>
+  const modal = document.getElementById('insignia-modal')!;
+  const modalImg = document.getElementById('modal-img') as HTMLImageElement;
+  const modalClose = document.getElementById('modal-close')!;
+
+  document.querySelectorAll<HTMLImageElement>('.insignia-thumb').forEach((img) => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.dataset.full ?? img.src;
+      modalImg.alt = img.alt;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
