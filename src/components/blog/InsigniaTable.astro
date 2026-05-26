@@ -10,6 +10,8 @@ const insignias = [
   { rank: 'Genin Gladius',  series: '16,384 nodes', emblem: 'Shield & Sword',   file: 'Rank8-V12-Genin-Gladius-node-faceplate-1-of-16384.png' },
   { rank: 'Genin Dýr',      series: '9,841 nodes',  emblem: 'Choice of Weapons',file: 'Rank9-V12-Genin-Dýr-node-faceplate-1-of-9841.png' },
 ];
+
+const insigniaData = JSON.stringify(insignias.map(({ rank, series, emblem }) => ({ rank, series, emblem })));
 ---
 
 <div class="not-prose overflow-x-auto">
@@ -49,23 +51,56 @@ const insignias = [
     aria-label="Close"
     class="absolute top-4 right-6 text-white text-5xl leading-none cursor-pointer bg-transparent border-none p-1 hover:text-gray-300 transition-colors"
   >&times;</button>
-  <img
-    id="modal-img"
-    src=""
-    alt=""
-    class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
-  />
+  <button
+    id="modal-prev"
+    aria-label="Previous"
+    class="absolute left-4 text-white text-5xl leading-none cursor-pointer bg-transparent border-none p-2 hover:text-gray-300 transition-colors select-none"
+  >&#8592;</button>
+  <div class="flex flex-col items-center gap-3">
+    <img
+      id="modal-img"
+      src=""
+      alt=""
+      class="max-w-[90vw] max-h-[80vh] object-contain rounded-lg shadow-2xl"
+    />
+    <div id="modal-caption" class="text-center text-white">
+      <p id="modal-rank" class="text-xl font-semibold"></p>
+      <p id="modal-series-emblem" class="text-sm text-gray-300"></p>
+    </div>
+  </div>
+  <button
+    id="modal-next"
+    aria-label="Next"
+    class="absolute right-4 text-white text-5xl leading-none cursor-pointer bg-transparent border-none p-2 hover:text-gray-300 transition-colors select-none"
+  >&#8594;</button>
 </div>
 
-<script>
-  const modal = document.getElementById('insignia-modal')!;
-  const modalImg = document.getElementById('modal-img') as HTMLImageElement;
-  const modalClose = document.getElementById('modal-close')!;
+<script define:vars={{ insigniaData: JSON.parse(insigniaData) }}>
+  const modal = document.getElementById('insignia-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalClose = document.getElementById('modal-close');
+  const modalPrev = document.getElementById('modal-prev');
+  const modalNext = document.getElementById('modal-next');
+  const modalRank = document.getElementById('modal-rank');
+  const modalSeriesEmblem = document.getElementById('modal-series-emblem');
+  const thumbs = Array.from(document.querySelectorAll('.insignia-thumb'));
+  let currentIndex = 0;
 
-  document.querySelectorAll<HTMLImageElement>('.insignia-thumb').forEach((img) => {
+  function showImage(index) {
+    currentIndex = (index + thumbs.length) % thumbs.length;
+    const thumb = thumbs[currentIndex];
+    modalImg.src = thumb.dataset.full ?? thumb.src;
+    modalImg.alt = thumb.alt;
+    const data = insigniaData[currentIndex];
+    if (data) {
+      modalRank.textContent = data.rank;
+      modalSeriesEmblem.textContent = `${data.series} · ${data.emblem}`;
+    }
+  }
+
+  thumbs.forEach((img, i) => {
     img.addEventListener('click', () => {
-      modalImg.src = img.dataset.full ?? img.src;
-      modalImg.alt = img.alt;
+      showImage(i);
       modal.classList.remove('hidden');
       modal.classList.add('flex');
       document.body.style.overflow = 'hidden';
@@ -79,10 +114,18 @@ const insignias = [
   }
 
   modalClose.addEventListener('click', closeModal);
+  modalPrev.addEventListener('click', () => showImage(currentIndex - 1));
+  modalNext.addEventListener('click', () => showImage(currentIndex + 1));
+
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (!modal.classList.contains('hidden')) {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    }
   });
 </script>
